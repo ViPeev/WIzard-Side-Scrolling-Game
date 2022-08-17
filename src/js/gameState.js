@@ -15,7 +15,8 @@ function initState(){
             KeyA:false,
             KeyS:false,
             KeyW:false,
-            KeyD:false
+            KeyD:false,
+            Space:false
          },
          bugStats:{
             width:50,

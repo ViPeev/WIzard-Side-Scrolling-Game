@@ -1,6 +1,6 @@
 function start(state, game) {
   game.createWizard(state.wizard);
-  window.requestAnimationFrame((timestamp) => gameLoop(state, game, timestamp));
+  window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }
 
 function gameLoop(state, game, timestamp) {
@@ -12,23 +12,22 @@ function gameLoop(state, game, timestamp) {
   //Spawn Bugs
   if (timestamp > state.bugStats.nextSpawnTimeStamp) {
     game.createBug(state.bugStats);
-    state.bugStats.nextSpawnTimeStamp = timestamp + Math.random() * state.bugStats.maxSpawnInterval;
+    state.bugStats.nextSpawnTimeStamp =
+      timestamp + Math.random() * state.bugStats.maxSpawnInterval;
   }
   //render Wizard
   wizardElement.style.left = wizard.posX + "px";
   wizardElement.style.top = wizard.posY + "px";
 
   //render Bugs
-  document.querySelectorAll(".bug").forEach(bug => {
+  document.querySelectorAll(".bug").forEach((bug) => {
     let posX = parseInt(bug.style.left);
-    if(posX > 0){
-        bug.style.left = posX - state.bugStats.speed + "px";
+    if (posX > 0) {
+      bug.style.left = posX - state.bugStats.speed + "px";
     } else {
-        bug.remove();
+      bug.remove();
     }
-
-  })
-
+  });
 
   window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }
@@ -53,5 +52,10 @@ function modifyWizardPosition(state, game) {
   }
   if (state.keys.KeyW) {
     wizard.posY = Math.max(wizard.posY - wizard.speed, 6);
+  }
+  if (state.keys.Space) {
+    game.wizardElement.style.background = ` url("./images/wizard-fire.png") no-repeat rgba(255, 255, 255, 0.5) center`;
+  } else {
+    game.wizardElement.style.background = ` url("./images/wizard.png") no-repeat rgba(255, 255, 255, 0.5) center`;
   }
 }
