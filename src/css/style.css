@@ -52,6 +52,25 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
+  overflow: hidden;
+}
+
+.score {
+  position: absolute;
+  top: 10px;
+  left: 200px;
+
+  background-color: white;
+  font-family: "Yusei Magic", sans-serif;
+  text-decoration: underline;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.score-vibrate {
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
+  border:solid green 3px;
 }
 
 .wizard {
@@ -66,10 +85,16 @@ body {
   animation: glow infinite 4s linear;
 }
 
+.fireball {
+  position: absolute;
+  background-image: url(../images/fire-ball.png);
+  background-size: cover;
+}
+
 .bug {
-    position:absolute;
-    background: url("../images/bug.png");
-    background-size: cover;
+  position: absolute;
+  background: url("../images/bug.png");
+  background-size: cover;
 }
 
 .hidden {
@@ -101,5 +126,58 @@ body {
   }
   70% {
     box-shadow: rgb(221, 31, 31) 0px 0px 29px 0px;
+  }
+}
+
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
   }
 }
