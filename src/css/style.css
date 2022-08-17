@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
+
 body {
   margin: 0;
   padding: 0;
@@ -29,7 +31,7 @@ body {
 .start-screen {
   width: 500px;
   padding: 20px;
-
+  font-family: "Yusei Magic", sans-serif;
   cursor: pointer;
 
   background-color: white;
@@ -47,10 +49,50 @@ body {
 }
 
 .game-screen {
-    width:100%;
-    height:100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 
+.wizard {
+  background: url("../images/wizard.png") no-repeat rgba(255, 255, 255, 0.5);
+  background-position: center;
+  border-radius: 50%;
+  outline: rgba(255, 255, 255, 0.5) solid 2px;
+  outline-offset: 5px;
+  box-shadow: rgba(245, 245, 245, 0.918) 0px 0px 29px 30px;
+  padding: 13px;
+  position: absolute;
+  animation: glow infinite 4s linear;
 }
 .hidden {
-    display:none;
+  display: none;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: rgba(245, 245, 245, 0.918) 0px 0px 29px 30px;
+  }
+
+  10% {
+    box-shadow: rgba(206, 230, 72, 0.918) 0px 0px 29px 0px;
+  }
+  20% {
+    box-shadow: rgba(206, 230, 72, 0.918) 0px 0px 29px 30px;
+  }
+  30% {
+    box-shadow: rgba(206, 230, 72, 0.918) 0px 0px 29px 0px;
+  }
+  40% {
+    box-shadow: rgba(231, 132, 18, 0.918) 0px 0px 29px 30px;
+  }
+  50% {
+    box-shadow: rgba(206, 230, 72, 0.918) 0px 0px 29px 0px;
+  }
+  60% {
+    box-shadow: rgb(221, 31, 31) 0px 0px 29px 30px;
+  }
+  70% {
+    box-shadow: rgb(221, 31, 31) 0px 0px 29px 0px;
+  }
 }
