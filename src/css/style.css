@@ -65,6 +65,13 @@ body {
   position: absolute;
   animation: glow infinite 4s linear;
 }
+
+.bug {
+    position:absolute;
+    background: url("../images/bug.png");
+    background-size: cover;
+}
+
 .hidden {
   display: none;
 }
